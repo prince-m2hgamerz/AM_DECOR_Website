@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node -e \"const fs=require('fs'); fs.cpSync('AM_DECOR', 'dist', {recursive:true, force:true}); console.log('Copied AM_DECOR to dist');\""
+    "build": "node build.js"
   }
 }
