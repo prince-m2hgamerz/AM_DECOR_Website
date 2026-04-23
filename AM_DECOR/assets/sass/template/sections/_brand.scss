@@ -1,0 +1,102 @@
+.brand-item {
+    border: 1px solid $smoke-color;
+    transition: all 0.4s ease-in-out;
+
+    @include xs {
+        margin-bottom: 20px;
+    }
+
+    img {
+        transition: all 0.4s ease-in-out;
+    }
+
+    &:hover {
+        background-color: $title-color;
+
+        img {
+            filter: brightness(0) invert(1);
+        }
+    }
+}
+
+.brand-wrapp {
+    display: flex;
+    justify-content: space-between;
+
+    @include xs {
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &.style2 {
+        justify-content: space-evenly;
+    }
+}
+
+/* brand card -------------------------------*/
+.brand-card {
+    height: 101px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+
+    @include lg {
+        margin-right: auto;
+    }
+
+    @media(max-width: 480px) {
+        margin: auto;
+    }
+
+
+    &:hover {
+        a img {
+            &.gray {
+
+                opacity: 1;
+                visibility: visible;
+                transition: all 0.7s ease-in-out;
+                transform: translateY(0%);
+
+            }
+
+            &.original {
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.7s ease-in-out;
+                transform: translateY(100%);
+            }
+        }
+    }
+
+    img {
+        margin: 0 auto;
+        transition: all 0.7s ease-in-out;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        &.gray {
+
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.7s ease-in-out;
+            transform: translateY(-100%);
+        }
+
+        &.original {
+            transition: all 0.7s ease-in-out;
+            transform: translateY(0%);
+            filter: opacity(0.5);
+        }
+    }
+}
+
+.brand-card2 {
+    img {
+        width: 100%;
+    }
+}

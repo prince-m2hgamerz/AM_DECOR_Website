@@ -1,0 +1,150 @@
+.th-experience {
+    width: 280px;
+    background-color: $title-color;
+    padding: 40px 20px;
+
+    &.style2 {
+        width: 692px;
+        height: 692px;
+        text-align: center;
+        background: #F8F8F8;
+        border-radius: 50%;
+        padding: 200px 140px; 
+
+
+        @include ml {
+            width: 100%;
+            height: 100%;
+            line-height: 100%;
+            padding: 110px 60px;
+        }
+
+        @include vxs {
+            padding: 80px 30px;
+            img {
+                width: 60%;
+            }
+        }
+        .experience-img {
+            margin-bottom: 28px; 
+        }
+
+        .experience-year {
+            margin-bottom: 30px;
+        }
+
+        .experience-text {
+            color: $title-color;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 48px;
+            margin-bottom: 0;
+
+            @include xl {
+                font-size: 25px;
+                line-height: 35px;
+            }
+            @include vxs {
+                font-size: 20px;
+                line-height: 30px;
+            }
+        }
+
+    }
+
+    .experience-year {
+        font-family: $title-font;
+        font-weight: 600;
+        font-size: 72px;
+        color: $white-color;
+        margin-bottom: 0;
+    }
+
+    .experience-text {
+        font-size: 18px;
+        text-transform: uppercase;
+        color: $white-color;
+        margin-bottom: 30px;
+    }
+
+    .client-thumb-group {
+        .box-title {
+            color: $white-color;
+            font-size: 16px;
+            font-family: $body-font;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            margin-bottom: 0;
+            margin-left: 7px;
+        }
+    }
+}
+
+/* cta 1 area  start ----------------------------*/
+.newsletter-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: auto;
+
+    @include sm {
+        display: block;
+        max-width: 100%;
+    }
+
+    .form-control {
+        min-height: 64px;
+        padding-right: 200px;
+        background-color: transparent;
+        border: 1px solid #EDEDED;
+        border-radius: 48px;
+        color: $white-color;
+
+        @include inputPlaceholder {
+            color: $white-color;
+        }
+
+        @include sm {
+            padding-right: 0;
+        }
+    }
+
+
+    .th-btn {
+        min-width: 130px;
+        padding: 16px 35px;
+        border-radius: 100px;
+        position: absolute;
+        top: 7px;
+        right: 7px;
+
+        @include sm {
+            position: relative;
+            right: 0;
+            top: 10px;
+            width: 100%;
+            display: block;
+        }
+    }
+}
+
+.newsletter-widget {
+    .newsletter-form {
+        margin-bottom: 20px;
+    }
+
+    input[type="checkbox"]~label:before {
+        background-color: transparent;
+        border: 1px solid var(--th-border-color);
+    }
+
+    label {
+        color: $white-color;
+        font-size: 16px;
+    }
+}
+
+/* cta 1 area  start ----------------------------*/
+
+/* cta 3 end ---------------------*/

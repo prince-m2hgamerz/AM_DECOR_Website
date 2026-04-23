@@ -1,0 +1,757 @@
+/* project card start ----------------------------*/
+
+
+.projectSlide {
+    margin-right: 0 !important;
+
+    @media(min-width: 1600px) {
+        margin-right: -500px !important;
+    }
+}
+
+
+
+.project-card {
+    .box-img {
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+        margin-bottom: 24px;
+
+        img {
+            transition: transform 500ms;
+            transform: perspective(0px) rotateX(0deg) rotateY(0deg) scaleX(1) scaleY(1);
+            transform-origin: center center;
+        }
+    }
+
+    .icon {
+        position: absolute;
+        top: 32px;
+        right: 32px;
+        width: 50px;
+        height: 50px;
+        line-height: 53px;
+        text-align: center;
+        background-color: $white-color;
+        border-radius: 50%;
+        color: $theme-color;
+        font-size: 20px;
+
+    }
+
+    .box-title {
+        font-family: $title-font2;
+        font-size: 40px;
+        font-weight: 400;
+        margin-bottom: 5px;
+
+        @include xxl {
+            font-size: 30px;
+        }
+
+        @include xl {}
+    }
+
+    .box-text {
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: 0.02em;
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        .box-img {
+            img {
+                transform: perspective(2000px) rotateX(0.06deg) rotateY(0deg) scaleX(1.1) scaleY(1.1);
+            }
+        }
+    }
+}
+
+.project-area2 {
+    position: relative;
+    z-index: 9;
+}
+
+.project-slider2 {
+    margin-right: -60% !important;
+
+    @include md {
+        margin-right: 0 !important;
+    }
+
+    .slider-pagination {
+        margin-left: -18% !important;
+        margin-bottom: 0;
+        margin-top: 70px;
+        padding-bottom: 0;
+
+        @include md {
+            margin-left: 0 !important;
+        }
+    }
+}
+
+.project-box {
+    position: relative;
+    display: flex;
+    gap: 48px;
+    z-index: 2;
+
+    @include md {
+        flex-direction: column;
+    }
+
+    .box-img {
+        position: relative;
+        min-width: 661px;
+        z-index: 9;
+
+        @include ml {
+            min-width: 440px;
+        }
+
+        @include md {
+            min-width: 100%;
+        }
+    }
+
+    .box-title {
+        font-weight: 600;
+        font-size: 40px;
+        margin-top: 0;
+
+        @include ml {
+            font-size: 30px;
+        }
+
+    }
+
+    .box-text {
+        margin-bottom: 30px;
+    }
+
+    .box-thumb {
+        margin-top: 46px;
+    }
+}
+
+/* project start --------------------*/
+
+/* */
+.filter-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 40px;
+    text-align: center;
+    margin-bottom: 60px;
+
+    @include xs {
+        gap: 20px 40px;
+    }
+
+    &.style2 {
+        justify-content: flex-end;
+        gap: 16px;
+        .th-btn {
+            color: $white-color;
+        }
+
+        &.light {
+            .th-btn {
+                &.active {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .th-btn {
+        padding: 11.5px 20px;
+        font-weight: 400;
+        font-size: 16px;
+
+
+        &.active {
+            background: #1A1A1A;
+            border: 1px solid $white-color;
+            border-radius: 48px;
+            color: $white-color;
+        }
+    }
+
+    .tab-btn {
+        position: relative;
+        background: transparent;
+        border: none;
+        border-left: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+        font-size: 18px;
+        font-weight: 400;
+        color: $title-color;
+        padding: 0;
+        transition: all 0.4s ease-in-out;
+
+        &:not(:last-child) {
+            &:before {
+                content: "";
+                position: absolute;
+                height: 20px;
+                width: 1px;
+                right: -20px;
+                top: 50%;
+                transform: translateY(-50%) rotate(14deg);
+                background-color: $title-color;
+            }
+        }
+
+
+        &:hover,
+        &.active {
+            color: $title-color;
+            border-bottom: 1px solid $title-color;
+
+            &:before {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+/* project-item --------------*/
+.project-area {
+    margin-top: -210px;
+
+    @include md {
+        margin-top: -90px;
+    }
+
+    @include sm {
+        margin-top: 0px;
+    }
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+
+    @include ml {
+        gap: 40px;
+    }
+
+    @include lg {
+        flex-direction: column;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 70px;
+    }
+
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+
+
+        @include lg {
+            flex-direction: column;
+        }
+    }
+
+    &_wrapp {
+        display: flex;
+        gap: 24px;
+
+        @include vxs {
+            flex-direction: column;
+        }
+    }
+
+    .project-content {
+        max-width: 502px;
+
+        @include lg {
+            max-width: 100%;
+        }
+    }
+
+    .box-title {
+        font-family: $title-font2;
+        font-weight: 400;
+        font-size: 40px;
+        letter-spacing: 0.02em;
+        color: $white-color;
+    }
+
+    .box-text {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+        color: $gray-color;
+        margin-bottom: 70px;
+
+    }
+}
+
+/* project-list ------------------*/
+.project-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 18px 16px 18px 64px;
+
+    @include lg {
+        padding: 18px;
+    }
+
+    @include md {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    &:not(:last-child) {
+        border-bottom: 1px solid rgba(108, 109, 113, 0.2);
+    }
+
+    &-area {
+        border: 1px solid rgba(108, 109, 113, 0.2);
+    }
+
+
+    .box-title {
+        margin-bottom: 0;
+    }
+
+    .box-right {
+        position: relative;
+
+        .th-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 216px;
+            transform: translate(-50%, -50%);
+            padding: 11px 20px;
+
+        }
+    }
+
+    .title {
+        @include ml {
+            font-size: 30px;
+        }
+    }
+
+    .box-img {
+        max-width: 480px;
+        opacity: 0;
+        transform: scale(0);
+        transition: all 0.4s ease-in-out;
+
+        @include ml {
+            max-width: 320px;
+        }
+    }
+
+    &:hover {
+        .box-img {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .th-btn {
+            border-color: $white-color;
+            color: $white-color;
+
+            &:before {
+                background-color: $title-color;
+            }
+
+            &.th-icon:after {
+                background-color: $white-color;
+            }
+
+            &:hover {
+                border-color: $title-color;
+            }
+        }
+    }
+}
+
+/* project details -------------------------*/
+.widget_info {
+    background-color: transparent;
+
+    .widget_title {
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 48px;
+        letter-spacing: 0.02em;
+        color: $title-color;
+        max-width: 307px;
+
+        @include vxs {
+            font-size: 25px;
+            line-height: 35px;
+        }
+    }
+
+    .table {
+        border: none;
+        margin-bottom: 0;
+
+        tbody {
+
+
+            tr {
+                border-bottom: 1px solid #E4E4E5;
+
+                th {
+                    border: none;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 28px;
+                    letter-spacing: 0.02em;
+                    color: $title-color;
+                    padding: 18px 0;
+                }
+
+                td {
+                    font-weight: 400;
+                    border: none;
+                    padding: 18px 0;
+
+
+                }
+            }
+        }
+    }
+}
+
+.project-info {
+
+
+    &_subtitle {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    &_title {
+        font-weight: 600;
+        font-size: 18px;
+        letter-spacing: 0.02em;
+        color: $title-color;
+        display: flex;
+        align-items: center;
+        gap: 44px;
+        margin-bottom: 0;
+
+        a {
+            color: inherit;
+
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+}
+
+.video-img3 {
+    position: relative;
+    z-index: 2;
+
+    &:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg, rgba(25, 35, 97, 0.5), rgba(25, 35, 97, 0.5));
+        z-index: 1;
+    }
+
+    .video-play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        background-color: $white-color;
+
+        &:before,
+        &:after {
+            border-color: $white-color;
+        }
+
+        i {
+            color: $theme-color;
+        }
+    }
+}
+
+.project-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #EDEDED;
+    border-bottom: 1px solid #EDEDED;
+    padding: 17px 0;
+    margin-top: 22px;
+
+    .icon-btn {
+        --btn-size: 55px;
+        font-size: 16px;
+        border-radius: 99px;
+        border: none;
+        background-color: transparent;
+        border: 1px solid #EDEDED;
+        color: $title-color;
+
+        @include vxs {
+            --btn-size: 45px;
+        }
+
+        &:hover {
+            background-color: $theme-color;
+            color: $white-color;
+        }
+    }
+
+    .nav-btn {
+        color: $body-color;
+        font-family: $title-font;
+        font-weight: 500;
+
+        @include vxs {
+            font-size: 14px;
+        }
+
+        &:first-child {
+            .icon-btn {
+                margin-right: 10px;
+            }
+        }
+
+        &:last-child {
+            .icon-btn {
+                margin-left: 10px;
+            }
+        }
+
+        &:hover {
+            color: $theme-color;
+        }
+    }
+
+}
+
+/* project card start ----------------------------*/
+
+.social-links {
+    padding: 0;
+    display: inline-block;
+
+    .title {
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: 0.02em;
+        color: $white-color;
+        margin-right: 16px;
+        display: inline-block;
+
+    }
+
+
+    li {
+        display: inline-block;
+        list-style: none;
+        margin: 0 10px 0 0;
+    }
+
+    a {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+        border: 1px solid rgba(183, 189, 222, 0.5);
+        border-radius: 50%;
+        margin: 0 10px 0 0;
+
+        &:hover {
+            background-color: $theme-color;
+            color: $white-color;
+            border-color: $theme-color;
+        }
+    }
+}
+
+.tab-menu1 {
+    gap: 16px;
+    justify-content: flex-end;
+
+    @include ml {
+        justify-content: flex-start;
+    }
+
+    @include md {
+        justify-content: center;
+    }
+
+    &.style2 {
+        justify-content: center;
+        margin-bottom: 64px;
+
+        .tab-btn {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 34px;
+            color: $title-color;
+            border: none;
+            background-color: transparent;
+
+            img {
+                margin-top: -10px;
+                margin-right: 16px;
+            }
+
+            &.active {
+                color: $theme-color;
+            }
+
+        }
+    }
+
+    .th-btn {
+        padding: 12px 25px;
+
+        &.active {
+            background-color: $title-color;
+            color: $white-color;
+        }
+    }
+}
+
+/* project-grid -----------------*/
+.project-grid {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+
+    .box-img {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .year {
+        padding: 14px 35px;
+        background: #FFFFFF;
+        border-radius: 100px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 32px;
+        color: $title-color;
+        position: absolute;
+        top: 40px;
+        left: 40px;
+
+        @include xs {
+            top: 20px;
+            left: 20px;
+            font-size: 16px;
+            padding: 6px 20px;
+        }
+    }
+
+    .box-content {
+        background: rgba(31, 31, 31, 0.9);
+        padding: 40px;
+        position: absolute;
+        left: 48px;
+        right: 48px;
+        bottom: 48px;
+        z-index: 3;
+        transform: scaleX(0);
+        transition: all 0.4s ease-in-out;
+        z-index: 2;
+
+        @include xs {
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            padding: 25px;
+        }
+
+        @include vxs {
+            left: 0;
+            right: 0;
+            bottom: 0px;
+        }
+
+    }
+
+    .icon-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        --btn-size: 80px;
+        background: $theme-color;
+        border: none;
+        border-radius: 0px 0px 0px 24px;
+
+    }
+
+    .sub-title {
+        color: $white-color;
+        margin-bottom: 24px;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+
+
+
+        &:before,
+        &:after {
+            background-color: $white-color;
+        }
+    }
+
+    .box-title {
+        font-size: 40px;
+        line-height: 50px;
+        color: #FFFFFF;
+
+        @include ml {
+            font-size: 30px;
+        }
+
+        @include sm {
+            font-size: 25px;
+        }
+
+        @include vxs {
+            font-size: 20px;
+        }
+    }
+
+    .box-text {
+        max-width: 391px;
+        color: $gray-color;
+        margin-bottom: 0;
+    }
+
+
+    &:hover {
+        .box-content {
+            transform: scaleX(1)
+        }
+    }
+}

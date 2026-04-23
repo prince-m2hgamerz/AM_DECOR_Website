@@ -1,0 +1,265 @@
+.feature-home {}
+
+.feature-item {
+    &.shape-mockup-wrap {
+        position: static;
+    }
+
+    &:nth-child(1) {
+        .box-content {
+            bottom: unset;
+            right: unset;
+            top: 15%;
+            left: 15%
+        }
+    }
+
+    &:nth-child(2) {
+        .box-content {
+            right: unset;
+            bottom: 13%;
+            left: 10%
+        }
+    }
+
+    .shape-mockup {
+        position: absolute;
+        cursor: pointer;
+        z-index: 9;
+
+        .dot {
+            position: relative;
+            color: var(--theme-color);
+            width: 12px;
+            height: 12px;
+            line-height: 12px;
+            display: block;
+            background-color: var(--white-color);
+            text-align: center;
+            border-radius: 50%;
+            cursor: pointer;
+
+            &:after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: 50%;
+                box-sizing: content-box;
+                z-index: 1;
+            }
+
+            &:after {
+                @extend .ripple-animation;
+                background-color: $white-color;
+                animation-delay: 1s;
+
+            }
+        }
+
+    }
+
+
+    .box-content {
+        padding: 12px;
+        min-width: 239px;
+        transform: scaleX(0);
+        background-color: $white-color;
+        transition: all 0.4s ease-in-out;
+        position: absolute;
+        bottom: 13%;
+        right: 16%;
+        z-index: 4;
+    }
+
+    .box-img {
+        margin-bottom: 16px;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        @include vxs {
+            height: 70px;
+        }
+    }
+
+    .box-title {
+        font-family: $body-font;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0.02em;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .box-text {
+        font-weight: 400;
+        font-size: 14px;
+        text-transform: capitalize;
+        color: $theme-color;
+        margin-bottom: 0;
+    }
+
+    &.item-active {
+        .box-content {
+            transform: scaleX(1);
+        }
+    }
+}
+
+/* feature-box -------------------------*/
+.feature-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &-wrap {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 32px 18px;
+
+        @media(max-width: 490px) {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    .box-title {
+        margin-bottom: 0;
+
+        @media(max-width: 1699px) {
+            font-size: 20px;
+        }
+    }
+}
+
+
+/* choose-box start --------------------------*/
+.choose-area {
+    background-color: #1F1F1F;
+}
+
+.choose-box {
+    text-align: center;
+
+    .box-title {
+        @include xxl {
+            font-size: 22px;
+        }
+    }
+
+    .box-icon {
+        width: 130px;
+        height: 130px;
+        line-height: 130px;
+        border-radius: 50%;
+        text-align: center;
+        background: #2B2B2B;
+        display: block;
+        margin: auto auto 40px auto;
+        border: 1px solid #2D2D2D;
+
+        img {
+            transition: all 0.4s ease-in-out;
+        }
+    }
+
+    .box-text {
+        font-weight: 400;
+        font-size: 16px;
+        color: #6C6D71;
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        .box-icon {
+            img {
+                transform: rotateY(180deg);
+            }
+        }
+    }
+}
+
+/* choose-box end --------------------------*/
+/* choose Block -----------------------------------*/
+.choose-block {
+    &:not(:last-child) {
+        margin-bottom: 80px;
+    }
+
+    &.style1 {
+        direction: rtl;
+
+        @include sm {
+            direction: ltr;
+        }
+    }
+
+
+    &_img {
+        min-width: 100px;
+        margin-bottom: 40px;
+
+        img {
+            transition: all 0.4s ease-in-out;
+        }
+    }
+
+    .box-title {
+        font-family: $title-font2;
+        font-weight: 400;
+        font-size: 40px;
+        letter-spacing: 0.02em;
+        color: $white-color;
+        margin-bottom: 20px;
+
+        @include xxl {
+            font-size: 30px;
+        }
+    }
+
+    .box-text {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+        color: $gray-color;
+        max-width: 349px;
+        margin-bottom: -0.4rem;
+
+        @include md {
+            max-width: 100%;
+        }
+    }
+
+    &:hover {
+        .choose-block {
+            &_img {
+                img {
+                    transform: rotateY(180deg);
+                }
+            }
+        }
+    }
+}
+
+.choose-image {
+    position: relative;
+    overflow: hidden;
+    max-width: 684px;
+    display: block;
+    margin: auto;
+
+    @include xl {
+        max-width: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+}

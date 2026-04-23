@@ -1,0 +1,125 @@
+.breadcumb-menu {
+    max-width: 100%;
+    padding: 0;
+    margin: 20px 0 -0.5em 0;
+    list-style-type: none;
+    position: relative;
+
+    li {
+        display: inline-block;
+        margin-right: 3px;
+        padding-right: 5px;
+        list-style: none;
+        color: $title-color;
+        position: relative;
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: 0.02em;
+
+
+        &:after {
+            content: "/";
+            position: relative;
+            margin-left: 10px;
+            font-weight: 500;
+            font-size: 15px;
+            color: $title-color;
+            font-family: var(--icon-font);
+        }
+
+        &:last-child {
+            padding-right: 0;
+            margin-right: 0;
+
+            &:after {
+                display: none;
+            }
+        }
+
+
+    }
+
+    a,
+    span {
+        white-space: normal;
+        color: inherit;
+        word-break: break-word;
+        font-family: $body-font;
+        font-weight: 400;
+        font-size: 18px;
+        color: $title-color;
+    }
+
+    a {
+        position: relative;
+        z-index: 2;
+        margin-left: 25px;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: -25px;
+            width: 15px;
+            height: 16px;
+            background-image: url("../img/shape/shape-1.svg");
+        }
+    }
+}
+
+.breadcumb-title {
+    color: $title-color;
+    font-weight: 700;
+    font-size: 72px;
+    margin: -0.22em 0 -0.14em 0;
+    line-height: 1.1;
+}
+
+.breadcumb-wrapper {
+    position: relative;
+    background-color: $title-color;
+    padding: 188px 0;
+    z-index: 2;
+
+    @include lg {
+        margin-bottom: 0;
+    }
+}
+
+.breadcumb-content {
+    max-width: 1180px;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+@include xl {
+    .breadcumb-wrapper {
+        padding: 100px 0 100px 0;
+    }
+
+    .breadcumb-title {
+        font-size: 57px;
+    }
+
+    .breadcumb-menu {
+        margin: 20px 0 -0.5em 0;
+
+        li,
+        a,
+        span {
+            font-size: 16px;
+        }
+    }
+}
+
+@include md {
+    .breadcumb-title {
+        font-size: 42px;
+    }
+}
+@include xs {
+    .breadcumb-title {
+        font-size: 32px;
+    }
+}

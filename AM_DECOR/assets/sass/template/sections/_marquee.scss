@@ -1,0 +1,134 @@
+/* Marquee 1---------------------------------- */
+.marquee-content.style2 {
+    border-top: 1px solid #2D2D2D;
+    border-bottom: 1px solid #2D2D2D;
+    padding: 60px;
+    margin-right: -15%;
+    margin-top: 60px;
+}
+
+.marquee {
+    position: relative;
+    --duration: 120s;
+    --gap: 35px;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+
+    &:first-child {
+        --duration: 100s;
+    }
+
+    &:last-child {
+        --duration: 80s;
+    }
+
+    &.marquee--reverse {
+        .marquee-group {
+            --gap: 35px;
+            animation-direction: reverse;
+        }
+    }
+
+    .marquee-group {
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: distribute;
+        justify-content: flex-start;
+        gap: var(--gap);
+        animation: scroll var(--duration) linear infinite;
+
+        &.style2 {
+            .item {
+               
+
+                a {
+                    font-family: $title-font;
+                    display: inline-block;
+                    position: relative;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: $title-color;
+                    font-size: 88px;
+                    font-weight: 500;
+                    color: transparent;
+                    line-height: 96px;
+                    transition: all 0.3s ease-in-out;
+
+                    &::before {
+                        overflow: hidden;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 0;
+                        color: $white-color;
+                        white-space: nowrap;
+                        content: attr(data-hover);
+                        transition: all 0.5s cubic-bezier(0.17, 0.67, 0.32, 0.87);
+                    }
+
+
+
+                    &:hover {
+                        color: $title-color;
+                        -webkit-text-stroke-color: $title-color;
+
+                        &::before {
+                            width: 100%;
+                            color: $title-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.style3 {
+
+
+            .item {
+                font-family: $title-font;
+                font-weight: 800;
+                font-size: 120px;
+                line-height: 96px;
+                color: rgba(255, 255, 255, 0.05);
+                text-transform: capitalize;
+
+                img {
+                    border-radius: 0px;
+                }
+
+            }
+        }
+
+        .img {
+            margin: 20px;
+        }
+
+        .item {
+            font-family: $title-font2;
+            font-weight: 400;
+            font-size: 88px;
+            line-height: 96px;
+            text-transform: uppercase;
+            display: inline-block;
+            cursor: pointer;
+            color: $white-color;
+            transition: all 0.4s ease-in-out;
+
+            span {
+                margin: 0px;
+            }
+
+            img {
+                margin: 0;
+                border-radius: 150px;
+                margin-right: 35px;
+            }
+        }
+    }
+}
