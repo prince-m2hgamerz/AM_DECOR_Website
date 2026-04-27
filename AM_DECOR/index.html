@@ -675,7 +675,17 @@ ul { list-style: none; padding: 0; margin: 0; }
     from { opacity: 0; transform: translateY(22px); }
     to { opacity: 1; transform: translateY(0); }
 }
+@media (max-width: 560px) {
+    .hero-stats {
+        justify-content: center;   /* 🔥 THIS IS THE FIX */
+        text-align: center;
+    }
 
+    .hero-stat {
+        border-right: none;        /* optional: cleaner look */
+        padding: 10px 14px;
+    }
+}
 /* Scroll indicator */
 .scroll-hint {
     position: absolute;
